@@ -1,16 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mysql = require('mysql2');
+//const mysql = require('mysql2');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'node',
-  password: 'Pa$$w0rd901216',
-  database: 'mydb'
-});
+//const connection = mysql.createConnection({
+//  host: 'localhost',
+//  user: 'node',
+//  password: 'Pa$$w0rd901216',
+//  database: 'mydb'
+//});
 
 connection.connect((error) => {
   if (error) throw error;
@@ -41,6 +41,6 @@ app.post('/login', (req, res) => {
   );
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(80, () => {
+  console.log('Server is running on port 80');
 });
